@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/13/2025 15:56:40" ReportInfo.Modified="02/13/2025 16:14:54" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqHE+UVBHO0O0957hJkIVu0pIRB2uCf2cKLzTzp3n3w44M4mjhY29+kVyRX7oPfVrG3PbukPKnJ1JaL2jqwv1bCxR01PkpCokM8jFSlnTXMA5ilQsdY5LKd9Ki/W7+lxWTOAOCap34pSJrjQMYvgEHxSHfULiwsvjuIcjtmc/5ZAH/EvdJwYGvbDnTtEt1JKtDGP8vt7/GB6FJ9WSknCHd+Q==">
+      <TableDataSource Name="Table" DataType="System.Int32" Enabled="true" SelectCommand="SELECT Clienti.CodCli, Clienti.Denom, TabAge.CodAge, TabAge.Descrizione&#13;&#10;FROM  Clienti INNER JOIN CliFatt3 ON Clienti.CodCli = CliFatt3.CodCli INNER JOIN&#13;&#10;TabAge ON CliFatt3.CodAge = TabAge.CodAge&#13;&#10;ORDER BY Clienti.CodCli">
+        <Column Name="CodCli" DataType="System.String"/>
+        <Column Name="Denom" DataType="System.String"/>
+        <Column Name="CodAge" DataType="System.String"/>
+        <Column Name="Descrizione" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="37.8">
+      <TextObject Name="Text1" Width="1047.06" Height="37.8" Dock="Fill" Text="[ReportTitle]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="1047.06" Height="28.35">
+      <TextObject Name="Text3" Width="264.6" Height="18.9" Fill.Color="LightSkyBlue" Text="CodCli" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="264.6" Width="264.6" Height="18.9" Fill.Color="LightSkyBlue" Text="Denom" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="529.2" Width="255.15" Height="18.9" Fill.Color="LightSkyBlue" Text="CodAge" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="784.35" Width="255.15" Height="18.9" Fill.Color="LightSkyBlue" Text="Descrizione" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="1047.06" Height="37.8" EvenStyle="EvenRows" DataSource="Table">
+      <TextObject Name="Text2" Top="9.45" Width="264.6" Height="18.9" Text="[Table.CodCli]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Left="264.6" Top="9.45" Width="264.6" Height="18.9" Text="[Table.Denom]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="529.2" Top="9.45" Width="255.15" Height="18.9" Text="[Table.CodAge]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Left="784.35" Top="9.45" Width="255.15" Height="18.9" Text="[Table.Descrizione]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="115.95" Width="1047.06" Height="18.9">
+      <TextObject Name="Text10" Width="1047.06" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

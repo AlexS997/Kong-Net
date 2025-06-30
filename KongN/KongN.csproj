@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\FastReport.Net.Demo.2025.2.0\build\net462\FastReport.Net.Demo.props" Condition="Exists('..\packages\FastReport.Net.Demo.2025.2.0\build\net462\FastReport.Net.Demo.props')" />
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A52FD120-7A31-4F11-B92C-6797C4816CC2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KongN</RootNamespace>
+    <AssemblyName>KongN</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gorilla-facing-right %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.66\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.2.0.78\lib\net461\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.Net.Demo.2025.2.0\lib\net462\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.Net.Demo.2025.2.0\lib\net462\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Compat, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.Compat.2025.2.0\lib\net462\FastReport.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.DataVisualization, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.DataVisualization.2025.2.0\lib\net462\FastReport.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.Net.Demo.2025.2.0\lib\net462\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.VSDesign, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.Net.Demo.2025.2.0\lib\net462\FastReport.VSDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Web, Version=2025.2.0.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.Net.Demo.2025.2.0\lib\net462\FastReport.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Core.2.1.7\lib\net48\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WinForms.2.1.7\lib\net48\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WinPresentation.2.1.7\lib\net48\GMap.NET.WindowsPresentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Jot, Version=2.1.17.0, Culture=neutral, PublicKeyToken=6b498f69c5f88322, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jot.2.1.17\lib\netstandard2.0\Jot.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=4.11.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.4.11.0\lib\net48\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.4\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=9.0.0.4, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.9.0.4\lib\net462\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=9.0.0.4, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.9.0.4\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.4, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.9.0.4\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Mikrotik.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mikrotik.Net.1.3.0\lib\netstandard2.0\Mikrotik.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=4.11.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.4.11.0\lib\net48\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.29.1.38\lib\net462\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Core.WinForms.29.1.38\lib\net462\Syncfusion.Core.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Data.WinForms.29.1.38\lib\net462\Syncfusion.Data.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DataSource.WinForms.29.1.38\lib\net462\Syncfusion.DataSource.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Edit.Windows, Version=28.2462.3.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Grid.Base, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Base.29.1.38\lib\net462\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Windows, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Windows.29.1.38\lib\net462\Syncfusion.Grid.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.GridCommon.WinForms.29.1.38\lib\net462\Syncfusion.GridCommon.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.29.1.38\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.29.1.38\lib\net462\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.PdfViewer.Windows, Version=28.2462.3.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfDataGrid.WinForms.29.1.38\lib\net462\Syncfusion.SfDataGrid.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGridConverter.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DataGridExport.WinForms.29.1.38\lib\net462\Syncfusion.SfDataGridConverter.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfInput.WinForms.29.1.38\lib\net462\Syncfusion.SfInput.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.WinForms, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfListView.WinForms.29.1.38\lib\net462\Syncfusion.SfListView.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.29.1.38\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Windows, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Windows.29.1.38\lib\net462\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SpellChecker.Base.29.1.38\lib\net462\Syncfusion.SpellChecker.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Base.29.1.38\lib\net462\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Windows.29.1.38\lib\net462\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base, Version=29.1462.38.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.XlsIO.WinForms.29.1.38\lib\net462\Syncfusion.XlsIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.9.0\lib\net462\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.119.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.119.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Formats.Asn1, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.9.0.4\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agenda\FrmAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\FrmAgenda.Designer.cs">
+      <DependentUpon>FrmAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda\FrmAgendaMaschera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\FrmAgendaMaschera.Designer.cs">
+      <DependentUpon>FrmAgendaMaschera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda\FrmStoricoAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\FrmStoricoAgenda.Designer.cs">
+      <DependentUpon>FrmStoricoAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Antivirus\frmAntivirusMarche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Antivirus\frmAntivirusMarche.Designer.cs">
+      <DependentUpon>frmAntivirusMarche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apparati\FrmAbilitazioneApparati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apparati\FrmAbilitazioneApparati.Designer.cs">
+      <DependentUpon>FrmAbilitazioneApparati.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apparati\FrmApparati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apparati\FrmApparati.Designer.cs">
+      <DependentUpon>FrmApparati.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apparati\FrmApparatiTipi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apparati\FrmApparatiTipi.Designer.cs">
+      <DependentUpon>FrmApparatiTipi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Azioni\FrmMessaggiInCoda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Azioni\FrmMessaggiInCoda.Designer.cs">
+      <DependentUpon>FrmMessaggiInCoda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Azioni\FrmOperazioniInCoda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Azioni\FrmOperazioniInCoda.Designer.cs">
+      <DependentUpon>FrmOperazioniInCoda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassiTabelle\1_fonti.cs" />
+    <Compile Include="ClassiTabelle\2_gateways.cs" />
+    <Compile Include="ClassiTabelle\3_ponti.cs" />
+    <Compile Include="ClassiTabelle\4_pannelli.cs" />
+    <Compile Include="ClassiTabelle\4_tecnologia.cs" />
+    <Compile Include="ClassiTabelle\5_Clientirete.cs" />
+    <Compile Include="ClassiTabelle\6_TabellaEsclusionePannelli.cs" />
+    <Compile Include="ClassiTabelle\Agenda.cs" />
+    <Compile Include="ClassiTabelle\Antivirus.cs" />
+    <Compile Include="ClassiTabelle\AntivirusMarche.cs" />
+    <Compile Include="ClassiTabelle\Apparati.cs" />
+    <Compile Include="ClassiTabelle\ApparatiTipi.cs" />
+    <Compile Include="ClassiTabelle\ContrattiProfili.cs" />
+    <Compile Include="ClassiTabelle\ContrattiTipi.cs" />
+    <Compile Include="ClassiTabelle\MessaggiDefinizione.cs" />
+    <Compile Include="ClassiTabelle\ProvvArticoli.cs" />
+    <Compile Include="ClassiTabelle\SchedeSim.cs" />
+    <Compile Include="ClassiTabelle\SchedeSimFatture.cs" />
+    <Compile Include="ClassiTabelle\Sms.cs" />
+    <Compile Include="ClassiTabelle\SMSStorico.cs" />
+    <Compile Include="ClassiTabelle\TabellaUtenti.cs" />
+    <Compile Include="ClassiTabelle\VoIPNazioni.cs" />
+    <Compile Include="ClassiTabelle\VoIPNumerovoip.cs" />
+    <Compile Include="ClassiTabelle\VoIPofferte.cs" />
+    <Compile Include="ClassiTabelle\VoIPprefissi.cs" />
+    <Compile Include="ClassiTabelle\VoiPPrefissiStandard.cs" />
+    <Compile Include="Classi\AgentiProvvigioni.cs" />
+    <Compile Include="Classi\ButtonManager.cs" />
+    <Compile Include="Classi\ClsGemini.cs" />
+    <Compile Include="Classi\ClsMaxLenght.cs" />
+    <Compile Include="Classi\ClsTableSchema.cs" />
+    <Compile Include="Classi\ClsUtilityForms.cs" />
+    <Compile Include="Classi\Cmk.cs" />
+    <Compile Include="Classi\ControllaUltimePassword.cs" />
+    <Compile Include="Classi\CSMS.cs" />
+    <Compile Include="Classi\CVoIPofferte.cs" />
+    <Compile Include="Classi\CVoIPprefissi.cs" />
+    <Compile Include="Classi\Email.cs" />
+    <Compile Include="Classi\EmailCheck.cs" />
+    <Compile Include="Classi\EncryptDecrypt.cs" />
+    <Compile Include="Classi\Global.cs" />
+    <Compile Include="Antivirus\frmAntivirus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Antivirus\frmAntivirus.Designer.cs">
+      <DependentUpon>frmAntivirus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\AppConfiguration.cs" />
+    <Compile Include="Classi\JClass.cs" />
+    <Compile Include="Classi\MapPunto.cs" />
+    <Compile Include="Classi\Services.cs" />
+    <Compile Include="Classi\SqlControl.cs" />
+    <Compile Include="Classi\SQLControlSP.cs" />
+    <Compile Include="Classi\UpdateChecker.cs" />
+    <Compile Include="Classi\ValPassword.cs" />
+    <Compile Include="Contratti\FrmContrattiProfili.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contratti\FrmContrattiProfili.Designer.cs">
+      <DependentUpon>FrmContrattiProfili.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contratti\FrmContrattiTipi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contratti\FrmContrattiTipi.Designer.cs">
+      <DependentUpon>FrmContrattiTipi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contratti\FrmImportaContratti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contratti\FrmImportaContratti.Designer.cs">
+      <DependentUpon>FrmImportaContratti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contratti\FrmRateContratto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contratti\FrmRateContratto.Designer.cs">
+      <DependentUpon>FrmRateContratto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\FrmContrattiNONRinnovati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controlli\FrmContrattiNONRinnovati.Designer.cs">
+      <DependentUpon>FrmContrattiNONRinnovati.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\FrmAggiornaSpesePostali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controlli\FrmAggiornaSpesePostali.Designer.cs">
+      <DependentUpon>FrmAggiornaSpesePostali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\FrmClientiEsclusiScadenzario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controlli\FrmClientiEsclusiScadenzario.Designer.cs">
+      <DependentUpon>FrmClientiEsclusiScadenzario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\FrmClientiSenzaContratto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controlli\FrmClientiSenzaContratto.Designer.cs">
+      <DependentUpon>FrmClientiSenzaContratto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\FrmPartiteAperte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controlli\FrmPartiteAperte.Designer.cs">
+      <DependentUpon>FrmPartiteAperte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\FrmSpesePostali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controlli\FrmSpesePostali.Designer.cs">
+      <DependentUpon>FrmSpesePostali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\FrmTelefonoErrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controlli\FrmTelefonoErrato.Designer.cs">
+      <DependentUpon>FrmTelefonoErrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="find\FormFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="find\FormFind.Designer.cs">
+      <DependentUpon>FormFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="find\PrintPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="find\PrintPreviewForm.Designer.cs">
+      <DependentUpon>PrintPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrima.Designer.cs">
+      <DependentUpon>frmPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funzioni\ClsFunzioni.cs" />
+    <Compile Include="Profili\FrmProfiliUtenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profili\FrmProfiliUtenti.Designer.cs">
+      <DependentUpon>FrmProfiliUtenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profili\FrmProfiliUtentiKing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profili\FrmProfiliUtentiKing.Designer.cs">
+      <DependentUpon>FrmProfiliUtentiKing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Provvigioni\FrmArticoliProvvigioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provvigioni\FrmArticoliProvvigioni.Designer.cs">
+      <DependentUpon>FrmArticoliProvvigioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Provvigioni\FrmClientiXAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provvigioni\FrmClientiXAgente.Designer.cs">
+      <DependentUpon>FrmClientiXAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Provvigioni\FrmControlloFatture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provvigioni\FrmControlloFatture.Designer.cs">
+      <DependentUpon>FrmControlloFatture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Provvigioni\FrmGestioneProvvigioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provvigioni\FrmGestioneProvvigioni.Designer.cs">
+      <DependentUpon>FrmGestioneProvvigioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIM\FrmSchedeSIM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIM\FrmSchedeSIM.Designer.cs">
+      <DependentUpon>FrmSchedeSIM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIM\FrmSchedeSimFatture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIM\FrmSchedeSimFatture.Designer.cs">
+      <DependentUpon>FrmSchedeSimFatture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS\FrmGestioneSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMS\FrmGestioneSMS.Designer.cs">
+      <DependentUpon>FrmGestioneSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS\FrmLegendaProfili.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMS\FrmLegendaProfili.Designer.cs">
+      <DependentUpon>FrmLegendaProfili.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS\FrmMessaggiDefinizione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMS\FrmMessaggiDefinizione.Designer.cs">
+      <DependentUpon>FrmMessaggiDefinizione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS\FrmSmsSingolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMS\FrmSmsSingolo.Designer.cs">
+      <DependentUpon>FrmSmsSingolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS\FrmStoricoSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMS\FrmStoricoSMS.Designer.cs">
+      <DependentUpon>FrmStoricoSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stampa\FormStampa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stampa\FormStampa.Designer.cs">
+      <DependentUpon>FormStampa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmAlbero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmAlbero.Designer.cs">
+      <DependentUpon>FrmAlbero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmClientiRete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmClientiRete.Designer.cs">
+      <DependentUpon>FrmClientiRete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmFornitoriRete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmFornitoriRete.Designer.cs">
+      <DependentUpon>FrmFornitoriRete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmGateways.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmGateways.Designer.cs">
+      <DependentUpon>FrmGateways.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmMappa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmMappa.Designer.cs">
+      <DependentUpon>FrmMappa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmPannelli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmPannelli.Designer.cs">
+      <DependentUpon>FrmPannelli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmPonti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmPonti.Designer.cs">
+      <DependentUpon>FrmPonti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmTabellaEsclusione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmTabellaEsclusione.Designer.cs">
+      <DependentUpon>FrmTabellaEsclusione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmTecnologia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StrutturaRete\FrmTecnologia.Designer.cs">
+      <DependentUpon>FrmTecnologia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabelle\FrmAutomatismi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabelle\FrmAutomatismi.Designer.cs">
+      <DependentUpon>FrmAutomatismi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabelle\FrmTipiContratto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabelle\FrmTipiContratto.Designer.cs">
+      <DependentUpon>FrmTipiContratto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\FrmAbilitazioneUtenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utenti\FrmAbilitazioneUtenti.Designer.cs">
+      <DependentUpon>FrmAbilitazioneUtenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\FrmCambiaPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utenti\FrmCambiaPassword.Designer.cs">
+      <DependentUpon>FrmCambiaPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\FrmEmailPersonale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utenti\FrmEmailPersonale.Designer.cs">
+      <DependentUpon>FrmEmailPersonale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utenti\frmUtenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utenti\frmUtenti.Designer.cs">
+      <DependentUpon>frmUtenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utenti\FrmVedi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utenti\FrmVedi.Designer.cs">
+      <DependentUpon>FrmVedi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Varie\FormAttendere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Varie\FormAttendere.Designer.cs">
+      <DependentUpon>FormAttendere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vLogin.Designer.cs">
+      <DependentUpon>vLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmAgenziaEntrate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmAgenziaEntrate.Designer.cs">
+      <DependentUpon>FrmAgenziaEntrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmAutomatismiVoiP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmAutomatismiVoiP.Designer.cs">
+      <DependentUpon>FrmAutomatismiVoiP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmConsumi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmConsumi.Designer.cs">
+      <DependentUpon>FrmConsumi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmCostoPrefissiStandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmCostoPrefissiStandard.Designer.cs">
+      <DependentUpon>FrmCostoPrefissiStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmDettagliInserimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmDettagliInserimento.Designer.cs">
+      <DependentUpon>FrmDettagliInserimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmGestioneChiamate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmGestioneChiamate.Designer.cs">
+      <DependentUpon>FrmGestioneChiamate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmListaChiamate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmListaChiamate.Designer.cs">
+      <DependentUpon>FrmListaChiamate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmNazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmNazioni.Designer.cs">
+      <DependentUpon>FrmNazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmNormalizzazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmNormalizzazione.Designer.cs">
+      <DependentUpon>FrmNormalizzazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmNumeriVoIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmNumeriVoIP.Designer.cs">
+      <DependentUpon>FrmNumeriVoIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmOfferteVoip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmOfferteVoip.Designer.cs">
+      <DependentUpon>FrmOfferteVoip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmPrefissi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmPrefissi.Designer.cs">
+      <DependentUpon>FrmPrefissi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmTrasferimentoStorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmTrasferimentoStorico.Designer.cs">
+      <DependentUpon>FrmTrasferimentoStorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Voip\FrmVoiPErrori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Voip\FrmVoiPErrori.Designer.cs">
+      <DependentUpon>FrmVoiPErrori.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Agenda\FrmAgenda.resx">
+      <DependentUpon>FrmAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\FrmAgendaMaschera.resx">
+      <DependentUpon>FrmAgendaMaschera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\FrmStoricoAgenda.resx">
+      <DependentUpon>FrmStoricoAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Antivirus\frmAntivirus.resx">
+      <DependentUpon>frmAntivirus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Antivirus\frmAntivirusMarche.resx">
+      <DependentUpon>frmAntivirusMarche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apparati\FrmAbilitazioneApparati.resx">
+      <DependentUpon>FrmAbilitazioneApparati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apparati\FrmApparati.resx">
+      <DependentUpon>FrmApparati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apparati\FrmApparatiTipi.resx">
+      <DependentUpon>FrmApparatiTipi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Azioni\FrmMessaggiInCoda.resx">
+      <DependentUpon>FrmMessaggiInCoda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Azioni\FrmOperazioniInCoda.resx">
+      <DependentUpon>FrmOperazioniInCoda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contratti\FrmContrattiProfili.resx">
+      <DependentUpon>FrmContrattiProfili.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contratti\FrmContrattiTipi.resx">
+      <DependentUpon>FrmContrattiTipi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contratti\FrmImportaContratti.resx">
+      <DependentUpon>FrmImportaContratti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contratti\FrmRateContratto.resx">
+      <DependentUpon>FrmRateContratto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\FrmAggiornaSpesePostali.resx">
+      <DependentUpon>FrmAggiornaSpesePostali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\FrmClientiEsclusiScadenzario.resx">
+      <DependentUpon>FrmClientiEsclusiScadenzario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\FrmClientiSenzaContratto.resx">
+      <DependentUpon>FrmClientiSenzaContratto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\FrmContrattiNONRinnovati.resx">
+      <DependentUpon>FrmContrattiNONRinnovati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\FrmPartiteAperte.resx">
+      <DependentUpon>FrmPartiteAperte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\FrmSpesePostali.resx">
+      <DependentUpon>FrmSpesePostali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\FrmTelefonoErrato.resx">
+      <DependentUpon>FrmTelefonoErrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="find\FormFind.it-IT.resx">
+      <DependentUpon>FormFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="find\FormFind.resx">
+      <DependentUpon>FormFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="find\PrintPreviewForm.resx">
+      <DependentUpon>PrintPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrima.resx">
+      <DependentUpon>frmPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profili\FrmProfiliUtenti.resx">
+      <DependentUpon>FrmProfiliUtenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profili\FrmProfiliUtentiKing.resx">
+      <DependentUpon>FrmProfiliUtentiKing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provvigioni\FrmArticoliProvvigioni.resx">
+      <DependentUpon>FrmArticoliProvvigioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provvigioni\FrmClientiXAgente.resx">
+      <DependentUpon>FrmClientiXAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provvigioni\FrmControlloFatture.resx">
+      <DependentUpon>FrmControlloFatture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Provvigioni\FrmGestioneProvvigioni.resx">
+      <DependentUpon>FrmGestioneProvvigioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIM\FrmSchedeSIM.resx">
+      <DependentUpon>FrmSchedeSIM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIM\FrmSchedeSimFatture.resx">
+      <DependentUpon>FrmSchedeSimFatture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMS\FrmGestioneSMS.resx">
+      <DependentUpon>FrmGestioneSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMS\FrmLegendaProfili.resx">
+      <DependentUpon>FrmLegendaProfili.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMS\FrmMessaggiDefinizione.resx">
+      <DependentUpon>FrmMessaggiDefinizione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMS\FrmSmsSingolo.resx">
+      <DependentUpon>FrmSmsSingolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMS\FrmStoricoSMS.resx">
+      <DependentUpon>FrmStoricoSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stampa\FormStampa.resx">
+      <DependentUpon>FormStampa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmAlbero.resx">
+      <DependentUpon>FrmAlbero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmClientiRete.resx">
+      <DependentUpon>FrmClientiRete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmFornitoriRete.resx">
+      <DependentUpon>FrmFornitoriRete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmGateways.resx">
+      <DependentUpon>FrmGateways.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmMappa.resx">
+      <DependentUpon>FrmMappa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmPannelli.resx">
+      <DependentUpon>FrmPannelli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmPonti.resx">
+      <DependentUpon>FrmPonti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmTabellaEsclusione.resx">
+      <DependentUpon>FrmTabellaEsclusione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StrutturaRete\FrmTecnologia.resx">
+      <DependentUpon>FrmTecnologia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabelle\FrmAutomatismi.resx">
+      <DependentUpon>FrmAutomatismi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabelle\FrmTipiContratto.resx">
+      <DependentUpon>FrmTipiContratto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utenti\FrmAbilitazioneUtenti.resx">
+      <DependentUpon>FrmAbilitazioneUtenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utenti\FrmCambiaPassword.resx">
+      <DependentUpon>FrmCambiaPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utenti\FrmEmailPersonale.resx">
+      <DependentUpon>FrmEmailPersonale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utenti\frmUtenti.resx">
+      <DependentUpon>frmUtenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Utenti\FrmVedi.resx">
+      <DependentUpon>FrmVedi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varie\FormAttendere.resx">
+      <DependentUpon>FormAttendere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vLogin.resx">
+      <DependentUpon>vLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmAgenziaEntrate.resx">
+      <DependentUpon>FrmAgenziaEntrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmAutomatismiVoiP.resx">
+      <DependentUpon>FrmAutomatismiVoiP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmConsumi.resx">
+      <DependentUpon>FrmConsumi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmCostoPrefissiStandard.resx">
+      <DependentUpon>FrmCostoPrefissiStandard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmDettagliInserimento.resx">
+      <DependentUpon>FrmDettagliInserimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmGestioneChiamate.resx">
+      <DependentUpon>FrmGestioneChiamate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmListaChiamate.resx">
+      <DependentUpon>FrmListaChiamate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmNazioni.resx">
+      <DependentUpon>FrmNazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmNormalizzazione.resx">
+      <DependentUpon>FrmNormalizzazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmNumeriVoIP.resx">
+      <DependentUpon>FrmNumeriVoIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmOfferteVoip.resx">
+      <DependentUpon>FrmOfferteVoip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmPrefissi.resx">
+      <DependentUpon>FrmPrefissi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmTrasferimentoStorico.resx">
+      <DependentUpon>FrmTrasferimentoStorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Voip\FrmVoiPErrori.resx">
+      <DependentUpon>FrmVoiPErrori.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AppConfiguration.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.Agenda.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.Antivirus.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.AntivirusMarche.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.Apparati.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.ApparatiTipi.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.ContrattiTipi.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.Fornitori.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.MessaggiDefinizione.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.ProvvArticoli.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.SchedeSim.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.SchedeSimFatture.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.Sms.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.SMSStorico.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.TabellaUtenti.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.Utenti.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.VoIPNazioni.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.VoIPNumerovoip.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.VoIPofferte.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.VoIPprefissi.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle.VoiPPrefissiStandard.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle._1_fonti.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle._2_gateways.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle._3_ponti.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle._4_pannelli.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle._4_tecnologia.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle._5_Clientirete.datasource" />
+    <None Include="Properties\DataSources\KongN.ClassiTabelle._6_TabellaEsclusionePannelli.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\Antivirus.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ClientiEsclusiScadenzario.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ClientiTelefono.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ClientiXAgente.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ContrattiNON.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Exit %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gorilla-facing-right %281%29.ico" />
+    <Content Include="icons8-gorilla-80.ico" />
+    <Content Include="my-image.ico" />
+    <None Include="Resources\sms.png" />
+    <None Include="Resources\gps_10577701.png" />
+    <None Include="Resources\red-pushpin.png" />
+    <None Include="Resources\blue-pushpin.png" />
+    <Content Include="Resources\Custom-Icon-Design-Pretty-Office-13-Relationship.512.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\ingranaggio.png" />
+    <None Include="Resources\ProfiliUtenti1.png" />
+    <None Include="Resources\ProfiliUtenti.png" />
+    <None Include="Resources\ZoomOut.png" />
+    <None Include="Resources\ZoomIn.png" />
+    <None Include="Resources\AroowDoubleRight.gif" />
+    <None Include="Resources\ArrowRight.png" />
+    <None Include="Resources\ArrowLeft1.png" />
+    <None Include="Resources\ArrowDoubleLeft.png" />
+    <None Include="Resources\ArrowLeft.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Print1.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Modify.png" />
+    <None Include="Resources\Annulla.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\minimize1.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\maximizeB.png" />
+    <None Include="Resources\minimizeB.png" />
+    <None Include="Resources\RiduciB.png" />
+    <None Include="Resources\Riduci.png" />
+    <None Include="Resources\kongS.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\eye-open.png" />
+    <None Include="Resources\kong.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\Utenti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets'))" />
+    <Error Condition="!Exists('..\packages\FastReport.Net.Demo.2025.2.0\build\net462\FastReport.Net.Demo.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\FastReport.Net.Demo.2025.2.0\build\net462\FastReport.Net.Demo.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
+</Project>

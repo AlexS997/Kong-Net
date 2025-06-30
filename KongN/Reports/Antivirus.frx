@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/12/2025 17:34:49" ReportInfo.Modified="02/12/2025 17:59:08" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqGVEBw+bD1302HhodPOki0poPIyrJs5sYBjRibpEX4abarrPqr+/3ifLlRmORW7rCUQgMumXOImRIPcXBgFLEJEO6SjaZxXZP3IyDTMTg+oCqprxeMAtp089K5iqfzp1jfzFZ05lqqt8eNJfKhD5GB9YS3yquKufIRWjSwfb66y2u/49B83D4ciX4+fFyca/jh8/mW+OTNdW+GADzumlmVA==">
+      <TableDataSource Name="Table" DataType="System.Int32" Enabled="true" SelectCommand="SELECT A.Cliente, A.CodiceKing, A.Indirizzo, A.Cap, A.Citta, A.Pr, A.Telefono, A.Tel2, A.Email, A1.Antivirus, A.CodiceAntivirus, A.Postazioni, A.DataAcquisto, A.DataRinnovo, A.DataScadenza, A.Importo, A.Note&#13;&#10;FROM &quot;Antivirus&quot; A INNER JOIN &quot;AntivirusMarche&quot; A1 ON A.iDMarca = A1.iD &#13;&#10;&#13;&#10;ORDER BY A.Cliente Asc, A.DataScadenza Desc&#13;&#10;">
+        <Column Name="Cliente" DataType="System.String"/>
+        <Column Name="CodiceKing" DataType="System.String"/>
+        <Column Name="Indirizzo" DataType="System.String"/>
+        <Column Name="Cap" DataType="System.String"/>
+        <Column Name="Citta" DataType="System.String"/>
+        <Column Name="Pr" DataType="System.String"/>
+        <Column Name="Telefono" DataType="System.String"/>
+        <Column Name="Tel2" DataType="System.String"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="Antivirus" DataType="System.String"/>
+        <Column Name="CodiceAntivirus" DataType="System.String"/>
+        <Column Name="Postazioni" DataType="System.Int32"/>
+        <Column Name="DataAcquisto" DataType="System.DateTime"/>
+        <Column Name="DataRinnovo" DataType="System.DateTime"/>
+        <Column Name="DataScadenza" DataType="System.DateTime"/>
+        <Column Name="Importo" DataType="System.Double"/>
+        <Column Name="Note" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="ReportTitle" DataType="System.String" AsString=""/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="37.8">
+      <TextObject Name="Text37" Top="9.45" Width="1039.5" Height="18.9" Fill.Color="LightGray" Text="[ReportTitle]" HorzAlign="Center" Font="Arial, 14pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="1047.06" Height="28.35">
+      <TextObject Name="Text35" Left="784.35" Top="9.45" Width="56.7" Height="18.9" Fill.Color="LightSkyBlue" Text="Note" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="1047.06" Height="217.35" EvenStyle="EvenRows" DataSource="Table">
+      <TextObject Name="Text2" Left="132.3" Width="217.35" Height="18.9" Text="[Table.Cliente]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Left="132.3" Top="28.35" Width="66.15" Height="18.9" Text="[Table.CodiceKing]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="132.3" Top="56.7" Width="217.35" Height="18.9" Text="[Table.Indirizzo]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Left="132.3" Top="85.05" Width="66.15" Height="18.9" Text="[Table.Cap]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text10" Left="207.9" Top="85.05" Width="141.75" Height="18.9" Text="[Table.Citta]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text12" Left="359.1" Top="85.05" Width="66.15" Height="18.9" Text="[Table.Pr]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text14" Left="132.3" Top="113.4" Width="113.4" Height="18.9" Text="[Table.Telefono]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text16" Left="264.6" Top="113.4" Width="160.65" Height="18.9" Text="[Table.Tel2]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text18" Left="132.3" Top="141.75" Width="292.95" Height="18.9" Text="[Table.Email]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text20" Left="604.8" Width="132.3" Height="18.9" Text="[Table.Antivirus]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text22" Left="604.8" Top="28.35" Width="132.3" Height="18.9" Text="[Table.CodiceAntivirus]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text24" Left="604.8" Top="56.7" Width="56.7" Height="18.9" Text="[Table.Postazioni]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text26" Left="604.8" Top="85.05" Width="103.95" Height="18.9" Text="[Table.DataAcquisto]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text28" Left="604.8" Top="113.4" Width="103.95" Height="18.9" Text="[Table.DataRinnovo]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text30" Left="604.8" Top="141.75" Width="103.95" Height="18.9" Text="[Table.DataScadenza]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text32" Left="604.8" Top="170.1" Width="103.95" Height="18.9" Text="[Table.Importo]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text34" Left="784.35" Top="9.45" Width="255.15" Height="160.65" CanGrow="true" Text="[Table.Note]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text3" Left="9.45" Width="66.15" Height="18.9" Fill.Color="LightSkyBlue" Text="Cliente" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="9.45" Top="28.35" Width="66.15" Height="18.9" Fill.Color="LightSkyBlue" Text="CodiceKing" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="9.45" Top="56.7" Width="66.15" Height="18.9" Fill.Color="LightSkyBlue" Text="Indirizzo" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="9.45" Top="85.05" Width="66.15" Height="18.9" Fill.Color="LightSkyBlue" Text="Città" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text15" Left="9.45" Top="113.4" Width="66.15" Height="18.9" Fill.Color="LightSkyBlue" Text="Telefono" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text19" Left="9.45" Top="141.75" Width="56.7" Height="18.9" Fill.Color="LightSkyBlue" Text="Email" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text21" Left="453.6" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="Antivirus" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text23" Left="453.6" Top="28.35" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="CodiceAntivirus" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text25" Left="453.6" Top="56.7" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="Postazioni" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text27" Left="453.6" Top="85.05" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="DataAcquisto" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text29" Left="453.6" Top="113.4" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="DataRinnovo" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text31" Left="453.6" Top="141.75" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="DataScadenza" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text33" Left="453.6" Top="170.1" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="Importo" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <ShapeObject Name="Shape1" Left="9.45" Top="198.45" Width="1030.05" Height="5.67" Fill="LinearGradient" Fill.StartColor="DodgerBlue" Fill.EndColor="White" Fill.Angle="90" Fill.Focus="0.63" Fill.Contrast="1"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="295.5" Width="1047.06" Height="18.9">
+      <TextObject Name="Text36" Width="1047.06" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/13/2025 17:06:07" ReportInfo.Modified="02/13/2025 17:16:28" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqHE+UVBHO0O0957hJkIVu0pIRB2uCf2cKLzTzp3n3w44M4mjhY29+kVyRX7oPfVrG3PbukPKnJ1JaL2jqwv1bCxR01PkpCokM8jFSlnTXMA5ilQsdY5LKd9Ki/W7+lxWTOAOCap34pSJrjQMYvgEHxSHfULiwsvjuIcjtmc/5ZAH/EvdJwYGvbDnTtEt1JKtDFJatGqvWmlg8UjqPfXTpyg==">
+      <TableDataSource Name="Clienti" DataType="System.Int32" Enabled="true" TableName="Clienti" SelectCommand="SELECT CodCli, Denom, Ind, Prov, Loc, Tel, PIva, CF FROM Clienti Where U_EscludiScadenziario = 1">
+        <Column Name="CodCli" DataType="System.String"/>
+        <Column Name="Denom" DataType="System.String"/>
+        <Column Name="Ind" DataType="System.String"/>
+        <Column Name="Prov" DataType="System.String"/>
+        <Column Name="Loc" DataType="System.String"/>
+        <Column Name="Tel" DataType="System.String"/>
+        <Column Name="PIva" DataType="System.String"/>
+        <Column Name="CF" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="56.7">
+      <TextObject Name="Text1" Width="1047.06" Height="56.7" Dock="Fill" Text="[ReportTitle]" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="60.7" Width="1047.06" Height="28.35">
+      <TextObject Name="Text3" Width="132.3" Height="18.9" Fill.Color="LightSkyBlue" Text="CodCli" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="132.3" Width="132.3" Height="18.9" Fill.Color="LightSkyBlue" Text="Denom" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="264.6" Width="132.3" Height="18.9" Fill.Color="LightSkyBlue" Text="Ind" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="396.9" Width="132.3" Height="18.9" Fill.Color="LightSkyBlue" Text="Prov" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text11" Left="529.2" Width="132.3" Height="18.9" Fill.Color="LightSkyBlue" Text="Loc" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text13" Left="661.5" Width="132.3" Height="18.9" Fill.Color="LightSkyBlue" Text="Tel" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text15" Left="793.8" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="PIva" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text17" Left="916.65" Width="132.3" Height="18.9" Fill.Color="LightSkyBlue" Text="CF" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="93.05" Width="1047.06" Height="37.8" EvenStyle="EvenRows" DataSource="Clienti">
+      <TextObject Name="Text2" Top="9.45" Width="132.3" Height="18.9" Text="[Clienti.CodCli]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Left="132.3" Top="9.45" Width="132.3" Height="18.9" Text="[Clienti.Denom]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="264.6" Top="9.45" Width="132.3" Height="18.9" Text="[Clienti.Ind]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Left="396.9" Top="9.45" Width="132.3" Height="18.9" Text="[Clienti.Prov]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text10" Left="529.2" Top="9.45" Width="132.3" Height="18.9" Text="[Clienti.Loc]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text12" Left="661.5" Top="9.45" Width="132.3" Height="18.9" Text="[Clienti.Tel]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text14" Left="793.8" Top="9.45" Width="122.85" Height="18.9" Text="[Clienti.PIva]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text16" Left="916.65" Top="9.45" Width="132.3" Height="18.9" Text="[Clienti.CF]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="134.85" Width="1047.06" Height="18.9">
+      <TextObject Name="Text18" Width="1047.06" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="02/13/2025 15:18:12" ReportInfo.Modified="02/13/2025 15:34:41" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqGVEBw+bD1302HhodPOki0poPIyrJs5sYBjRibpEX4abarrPqr+/3ifLlRmORW7rCUQgMumXOImRIPcXBgFLEJEO6SjaZxXZP3IyDTMTg+oCqprxeMAtp089K5iqfzp1j1s3dHQ/4GjVuc+AONoz5zHMvPsZycgxbazHEJtpWOznqMFZXDZ8+9KKY0aPseSqk6iJRDxqD4Ip/ACmqZ8owzg==">
+      <TableDataSource Name="Table" DataType="System.Int32" Enabled="true" SelectCommand="Select * from ContrattiNON Order BY CodCli, IdContratto">
+        <Column Name="IdContratto" DataType="System.String"/>
+        <Column Name="CodCli" DataType="System.String"/>
+        <Column Name="Denom" DataType="System.String"/>
+        <Column Name="TipoContr" DataType="System.String"/>
+        <Column Name="FStato" DataType="System.String"/>
+        <Column Name="DataScad" DataType="System.DateTime"/>
+        <Column Name="DataDecIniz" DataType="System.DateTime"/>
+        <Column Name="DataScadFin" DataType="System.DateTime"/>
+        <Column Name="EsComp" DataType="System.String"/>
+        <Column Name="DataMov" DataType="System.DateTime"/>
+        <Column Name="MeseScad" DataType="System.String"/>
+        <Column Name="AnnoScad" DataType="System.String"/>
+        <Column Name="NFatt" DataType="System.String"/>
+        <Column Name="DataInizio" DataType="System.DateTime"/>
+        <Column Name="DataFine" DataType="System.DateTime"/>
+        <Column Name="RinnAuto" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="iD" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="37.8">
+      <TextObject Name="Text1" Width="1047.06" Height="37.8" Dock="Fill" Text="[ReportTitle]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="1047.06" Height="28.35"/>
+    <DataBand Name="Data1" Top="74.15" Width="1047.06" Height="179.55" EvenStyle="EvenRows" DataSource="Table">
+      <TextObject Name="Text2" Left="9.45" Top="47.25" Width="103.95" Height="18.9" Text="[Table.IdContratto]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Left="113.4" Top="47.25" Width="85.05" Height="18.9" Text="[Table.CodCli]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="198.45" Top="47.25" Width="292.95" Height="18.9" Text="[Table.Denom]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Left="491.4" Top="47.25" Width="103.95" Height="18.9" Text="[Table.TipoContr]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text10" Left="595.35" Top="47.25" Width="66.15" Height="18.9" Text="[Table.FStato]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text12" Left="642.6" Top="141.75" Width="85.05" Height="18.9" Text="[Table.DataScad]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text14" Left="756" Top="141.75" Width="85.05" Height="18.9" Text="[Table.DataDecIniz]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text16" Left="869.4" Top="141.75" Width="103.95" Height="18.9" Text="[Table.DataScadFin]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text18" Left="661.5" Top="47.25" Width="113.4" Height="18.9" Text="[Table.EsComp]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text20" Left="9.45" Top="151.2" Width="122.85" Height="18.9" Text="[Table.DataMov]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text22" Left="132.3" Top="151.2" Width="94.5" Height="18.9" Text="[Table.MeseScad]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text24" Left="226.8" Top="151.2" Width="56.7" Height="18.9" Text="[Table.AnnoScad]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text26" Left="283.5" Top="151.2" Width="56.7" Height="18.9" Text="[Table.NFatt]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text28" Left="340.2" Top="151.2" Width="56.7" Height="18.9" Text="[Table.DataInizio]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text30" Left="396.9" Top="151.2" Width="56.7" Height="18.9" Text="[Table.DataFine]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text32" Left="453.6" Top="151.2" Width="56.7" Height="18.9" Text="[Table.RinnAuto]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text17" Left="869.4" Top="103.95" Width="141.75" Height="18.9" Fill.Color="LightSkyBlue" Text="DataScadFin" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text13" Left="642.6" Top="103.95" Width="113.4" Height="18.9" Fill.Color="LightSkyBlue" Text="DataScad" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text15" Left="756" Top="103.95" Width="113.4" Height="18.9" Fill.Color="LightSkyBlue" Text="DataDecIniz" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text31" Left="396.9" Top="103.95" Width="56.7" Height="18.9" Fill.Color="LightSkyBlue" Text="DataFine" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text19" Left="661.5" Top="9.45" Width="113.4" Height="18.9" Fill.Color="LightSkyBlue" Text="EsComp" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text21" Left="9.45" Top="103.95" Width="122.85" Height="18.9" Fill.Color="LightSkyBlue" Text="DataMov" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text23" Left="132.3" Top="103.95" Width="94.5" Height="18.9" Fill.Color="LightSkyBlue" Text="MeseScad" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text25" Left="226.8" Top="103.95" Width="56.7" Height="18.9" Fill.Color="LightSkyBlue" Text="AnnoScad" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text27" Left="283.5" Top="103.95" Width="56.7" Height="18.9" Fill.Color="LightSkyBlue" Text="NFatt" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text29" Left="340.2" Top="103.95" Width="56.7" Height="18.9" Fill.Color="LightSkyBlue" Text="DataInizio" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text33" Left="453.6" Top="103.95" Width="56.7" Height="18.9" Fill.Color="LightSkyBlue" Text="RinnAuto" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text3" Left="9.45" Top="9.45" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="IdContratto" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="113.4" Top="9.45" Width="85.05" Height="18.9" Fill.Color="LightSkyBlue" Text="CodCli" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="198.45" Top="9.45" Width="292.95" Height="18.9" Fill.Color="LightSkyBlue" Text="Denom" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="491.4" Top="9.45" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="TipoContr" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text11" Left="595.35" Top="9.45" Width="66.15" Height="18.9" Fill.Color="LightSkyBlue" Text="FStato" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="257.7" Width="1047.06" Height="18.9">
+      <TextObject Name="Text36" Width="1047.06" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
